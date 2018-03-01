@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射的命名空间可以随意的起名字，这个名字是用来区分操作语句-->
+<mapper namespace="edu.nuc.mapper.UserMapper">
+    <!--下面配置了一个操作语句，类型为查询-->
+    <!--id为操作定义了名称,该操作的全称为命名空间+id也就是， com.yztcedu.mapper.UserMapper.getUserById-->
+    <!-- resultType属性的作用在于指定本次操作的结果类型-->
+    <select id="getUserById" resultType="edu.nuc.model.User" parameterType="string">
+        SELECT * FROM t_user where id=#{id}
+    </select>
+
+    <select id="getAllUser" resultType="edu.nuc.model.User">
+        SELECT * FROM t_user
+    </select>
+
+
+</mapper>
